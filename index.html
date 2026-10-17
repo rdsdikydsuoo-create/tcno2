@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>استمارة الدورة 2027 | الجامعة التكنولوجية</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="sheet">
+    <img class="logo" src="logo.png" alt="شعار مركز التعليم المستمر" onerror="this.remove()">
+    <div class="uni">الجامعة التكنولوجية</div>
+    <div class="center">مركز التعليم المستمر</div>
+    <h1>استمارة الدورة لسنة 2027</h1>
+  </header>
+
+  <form id="f" class="wrap" novalidate>
+    <section class="sheet"><fieldset>
+      <legend>معلومات الدورة</legend>
+      <div class="q"><span class="lbl">نوع الدورة <span class="req">*</span></span><div class="chips" data-name="type"></div></div>
+      <div class="q"><span class="lbl">تخصص الدورة <span class="req">*</span></span><div class="chips" data-name="field"></div></div>
+      <div class="q"><span class="lbl">مدة الدورة <span class="req">*</span></span><div class="chips" data-name="duration"></div></div>
+      <div class="q"><label for="titleAr">عنوان الدورة باللغة العربية <span class="req">*</span></label>
+        <input type="text" id="titleAr" placeholder="مثال: البرمجة باستخدام Arduino"></div>
+      <div class="q"><label for="titleEn">عنوان الدورة باللغة الإنكليزية <span class="req">*</span></label>
+        <input type="text" id="titleEn" dir="ltr" placeholder="e.g. Arduino Programming"></div>
+    </fieldset></section>
+
+    <section class="sheet"><fieldset>
+      <legend>المحاضرون</legend>
+      <div id="lects" class="stack"></div>
+      <div><button type="button" class="btn ghost" id="addLect">+ إضافة محاضر</button> <span class="hint">حتى 4 محاضرين</span></div>
+    </fieldset></section>
+
+    <section class="sheet"><fieldset>
+      <legend>تفاصيل الدورة</legend>
+      <div class="q"><label for="conditions">شروط الاشتراك <span class="req">*</span></label><textarea id="conditions"></textarea></div>
+      <div class="q"><label for="goal">هدف الدورة <span class="req">*</span></label><textarea id="goal"></textarea></div>
+      <div class="q"><label for="syllabus">منهاج الدورة <span class="req">*</span></label><textarea id="syllabus" class="tall" placeholder="اكتب كل موضوع بسطر"></textarea></div>
+    </fieldset></section>
+
+    <div class="sheet actions">
+      <button type="submit" class="btn primary" id="send">حفظ كملف Word</button>
+      <span id="msg" class="msg" role="status"></span>
+    </div>
+  </form>
+
+  <section class="sheet done" id="done" hidden>
+    <h2>تم تجهيز الاستمارة ✓</h2>
+    <p>نزل ملف Word على جهازك. افتحه واطبعه للتوقيع. إذا ما نزل، اضغط الزر مرة ثانية.</p>
+    <div class="actions">
+      <button type="button" class="btn primary" id="dlWord">تنزيل الملف مرة ثانية</button>
+      <button type="button" class="btn ghost" id="again">تعبئة استمارة جديدة</button>
+    </div>
+  </section>
+
+  <footer class="hint center">الجامعة التكنولوجية – مركز التعليم المستمر</footer>
+</div>
+<script src="https://unpkg.com/docx@8.5.0/build/index.umd.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
